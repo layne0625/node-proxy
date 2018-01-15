@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>node proxy demo</title>
+</head>
+
+<body>
+  <h1>node http proxy</h1>
+</body>
+<script>
+  var postData = { "head": { "syscode": "String", "lang": "String", "auth": "String", "cid": "String", "ctok": "String", "cver": "String", "sid": "String", "extension": [{ "name": "String", "value": "String" }], "pauth": "String", "sauth": "String" }, "resourceID": 49986 }
+  var options = {
+    method: 'post',
+    body: JSON.stringify(postData),
+    headers: {
+      "Content-Type": "application/json",
+      "x-vbk-request-token": "enlTVYH+vVL/xy30Fa1Btg=="
+    }
+  }
+  let url = '/api/getcrumbmenuinfo'
+  fetch(url, options)
+    .then(res => res.json())
+    .then(data => {
+      debugger
+      console.log(data)
+    })
+</script>
+
+</html>
